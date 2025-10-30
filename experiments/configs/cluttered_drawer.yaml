@@ -1,0 +1,30 @@
+env_name: ClutteredDrawerTAMPSystem
+render_mode: null
+action_scale: 0.005
+
+seed: 42
+num_episodes: 1
+max_steps: 500
+max_training_steps_per_shortcut: 100
+collect_episodes: 1
+episodes_per_scenario: 400
+force_collect: false
+render: false
+training_record_interval: 100
+batch_size: 16
+
+use_random_rollouts: true
+num_rollouts_per_node: 100
+max_steps_per_rollout: 300
+shortcut_success_threshold: 5
+
+learning_rate: 3.0e-4
+rl_batch_size: 16
+n_epochs: 10
+gamma: 0.99
+ent_coef: 0.01
+deterministic: false
+
+training_data_dir: training_data/multi_rl
+save_dir: trained_policies/multi_rl
+policy_path: trained_policies/multi_rl/ClutteredDrawerTAMPSystem_MultiRL

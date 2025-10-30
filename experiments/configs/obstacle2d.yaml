@@ -1,0 +1,31 @@
+env_name: GraphObstacle2DTAMPSystem
+n_blocks: 2
+render_mode: null
+action_scale: 1.0
+
+seed: 42
+num_episodes: 5
+max_steps: 50
+max_training_steps_per_shortcut: 50
+collect_episodes: 5
+episodes_per_scenario: 200
+force_collect: true
+render: false
+training_record_interval: 10
+batch_size: 32
+
+use_random_rollouts: true
+num_rollouts_per_node: 1000
+max_steps_per_rollout: 100
+shortcut_success_threshold: 1
+
+learning_rate: 3.0e-4
+rl_batch_size: 32
+n_epochs: 10
+gamma: 0.99
+ent_coef: 0.01
+deterministic: false
+
+training_data_dir: training_data/multi_rl
+save_dir: trained_policies/multi_rl
+policy_path: trained_policies/multi_rl/GraphObstacle2DTAMPSystem_MultiRL
