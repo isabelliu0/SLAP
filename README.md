@@ -52,38 +52,26 @@ pytest tests/
 
 We provide minimal sets of pre-trained SLAP shortcut policies to reproduce the results shown in our paper and videos.
 
-### Download Checkpoints
-
-You can browse and download pre-trained policies directly below:
-
-* **Obstacle Tower**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#trained_policies/multi_rl/GraphObstacleTowerTAMPSystem_MultiRL/)
-* **Cluttered Drawer**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#trained_policies/multi_rl/ClutteredDrawerTAMPSystem_MultiRL/)
-* **Cleanup Table**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#trained_policies/multi_rl/CleanupTableTAMPSystem_MultiRL/)
+### [Browse and Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#trained_policies/multi_rl/) Checkpoints
 
 ### Evaluate Pre-trained SLAP Shortcut Policies
 
 ```bash
-# Obstacle Tower environment
-python -m experiments.slap_eval --env obstacle_tower --seed 42
+# Obstacle Tower
+python -m experiments.slap_eval --config-name obstacle_tower policy_path=trained_policies/multi_rl/GraphObstacleTowerTAMPSystem_MultiRL
 
-# Cluttered Drawer environment
-python -m experiments.slap_eval --env cluttered_drawer --seed 42
+# Cluttered Drawer
+python -m experiments.slap_eval --config-name cluttered_drawer policy_path=trained_policies/multi_rl/ClutteredDrawerTAMPSystem_MultiRL
 
-# Cleanup Table environment
-python -m experiments.slap_eval --env cleanup_table --seed 42
+# Cleanup Table
+python -m experiments.slap_eval --config-name cleanup_table policy_path=trained_policies/multi_rl/CleanupTableTAMPSystem_MultiRL
 ```
 
 ### Train with Pre-collected Data
 
 We provide example sets of shortcut data for you to train SLAP policies directly.
 
-### Download Training Data
-
-Training data is organized by environment and contains graph-based shortcuts:
-
-* **Obstacle Tower**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#training_data/multi_rl/GraphObstacleTowerTAMPSystem_MultiRL/)
-* **Cluttered Drawer**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#training_data/multi_rl/ClutteredDrawerTAMPSystem_MultiRL/)
-* **Cleanup Table**: [Browse & Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#training_data/multi_rl/CleanupTableTAMPSystem_MultiRL/)
+### [Browse and Download](http://slap-data.s3-website.us-east-2.amazonaws.com/#training_data/multi_rl/) Training Data
 
 ### Training Data Structure
 
@@ -104,13 +92,13 @@ training_data/
 ### Train SLAP Shortcut Policies
 
 ```bash
-python -m experiments.slap_train --env obstacle2d --seed 42
+python -m experiments.slap_train --config-name obstacle2d seed=42
 
-python -m experiments.slap_train --env obstacle_tower --seed 42
+python -m experiments.slap_train --config-name obstacle_tower seed=42
 
-python -m experiments.slap_train --env cluttered_drawer --seed 42
+python -m experiments.slap_train --config-name cluttered_drawer seed=42
 
-python -m experiments.slap_train --env cleanup_table --seed 42
+python -m experiments.slap_train --config-name cleanup_table seed=42
 ```
 
 ### Collect Your Own Training Data
@@ -243,3 +231,18 @@ pytest -s tests/benchmarks/test_my_custom_env.py
 
 - Create a configuration file for the new environment at `experiments/configs/my_custom_env.yaml`
 - Add the environment to training script `experiments/slap_train.py`
+
+---
+
+## Reference
+
+If you used our work in your research, or you find our work useful, please cite us as:
+
+```bibtex
+@article{liu2025slap,
+  title={SLAP: Shortcut Learning for Abstract Planning},
+  author={Liu, Y Isabel and Li, Bowen and Eysenbach, Benjamin and Silver, Tom},
+  journal={arXiv preprint arXiv:2511.01107},
+  year={2025}
+}
+```
